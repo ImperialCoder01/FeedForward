@@ -4,7 +4,7 @@ A decentralized platform connecting surplus food sources with those in need, pow
 
 ## Live Demo
 
-Visit the live application at: [https://feed-forward-seven.vercel.app/](https://feed-forward-seven.vercel.app/)
+Visit the live application at: [https://feedforward-one.vercel.app/](https://feedforward-one.vercel.app/)
 
 ## Project Overview
 
