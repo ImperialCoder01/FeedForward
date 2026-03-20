@@ -18,8 +18,8 @@ To build an intelligent, scalable system that connects surplus food sources (cor
 - *Community Empowerment*: Reward and recognize active contributors with tokens and perks
 
 ### 1.5 Live Demo
-Visit the live application at: [https://feed-forward-seven.vercel.app/](https://feed-forward-seven.vercel.app/)
-
+Visit the live application at: [https://feedforward-one.vercel.app/](https://feedforward-one.vercel.app/)
+https://feedforward-one.vercel.app/
 ## 2. User Roles & Personas
 
 ### 2.1 Donor
