@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F59E0B"/>
+  <rect x="0" y="450" width="1600" height="450" fill="#D97706"/>
+  <circle cx="800" cy="450" r="300" fill="white"/>
+  <path d="M600 400C600 350 650 300 800 300C950 300 1000 350 1000 400C1000 450 950 500 800 500C650 500 600 450 600 400Z" fill="#F59E0B"/>
+  <path d="M700 500V600H900V500" stroke="#F59E0B" stroke-width="20"/>
+  <path d="M500 400C500 400 650 450 800 450C950 450 1100 400 1100 400" stroke="#F59E0B" stroke-width="20"/>
+  <text x="800" y="800" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">NOURISHING COMMUNITIES</text>
+</svg> 

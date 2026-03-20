@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#1A365D"/>
+  <rect x="0" y="450" width="1600" height="450" fill="#0F172A"/>
+  <path d="M400 700V300L800 100L1200 300V700H400Z" fill="#FFD700"/>
+  <path d="M600 700V400L800 300L1000 400V700H600Z" fill="#1A365D"/>
+  <path d="M500 300L800 150L1100 300" stroke="#1A365D" stroke-width="20"/>
+  <text x="800" y="800" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">LUXURY WITH A CONSCIENCE</text>
+</svg> 

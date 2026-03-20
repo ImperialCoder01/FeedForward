@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F59E0B"/>
+  <circle cx="100" cy="100" r="70" fill="white"/>
+  <path d="M70 90C70 80 80 70 100 70C120 70 130 80 130 90C130 100 120 110 100 110C80 110 70 100 70 90Z" fill="#F59E0B"/>
+  <path d="M85 110V130H115V110" stroke="#F59E0B" stroke-width="4"/>
+  <path d="M60 90C60 90 80 100 100 100C120 100 140 90 140 90" stroke="#F59E0B" stroke-width="4"/>
+  <text x="100" y="175" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">COMMUNITY KITCHEN NETWORK</text>
+</svg> 

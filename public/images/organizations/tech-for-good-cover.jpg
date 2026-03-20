@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#6B46C1"/>
+  <rect x="0" y="450" width="1600" height="450" fill="#553C9A"/>
+  <circle cx="800" cy="450" r="250" fill="white"/>
+  <path d="M650 450L750 550L950 350" stroke="#6B46C1" stroke-width="40"/>
+  <path d="M800 100V200M800 700V800M1150 450H1050M550 450H450" stroke="white" stroke-width="20"/>
+  <text x="800" y="800" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">TECHNOLOGY FOR SOCIAL IMPACT</text>
+</svg> 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#E31837"/>
+  <rect x="0" y="450" width="1600" height="450" fill="#B91C1C"/>
+  <rect x="400" y="200" width="800" height="500" fill="white"/>
+  <path d="M500 300H700V600H500V300Z" fill="#E31837"/>
+  <path d="M800 300L1100 450L800 600" stroke="#E31837" stroke-width="40"/>
+  <text x="800" y="800" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">EVERYDAY VALUE, ZERO WASTE</text>
+</svg> 

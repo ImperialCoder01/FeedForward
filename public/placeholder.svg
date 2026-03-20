@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#F3F4F6"/>
+  
+  <!-- Image icon -->
+  <path d="M160 140H240C248.837 140 256 147.163 256 156V244C256 252.837 248.837 260 240 260H160C151.163 260 144 252.837 144 244V156C144 147.163 151.163 140 160 140Z" stroke="#9CA3AF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Mountain symbol -->
+  <path d="M144 220L176 188L200 212L224 188L256 220V244C256 252.837 248.837 260 240 260H160C151.163 260 144 252.837 144 244V220Z" stroke="#9CA3AF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Sun/circle -->
+  <circle cx="192" cy="172" r="8" fill="#9CA3AF"/>
+</svg>

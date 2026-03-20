@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#4CAF50"/>
+  <rect x="0" y="450" width="1600" height="450" fill="#388E3C"/>
+  <circle cx="800" cy="450" r="200" fill="#81C784"/>
+  <path d="M600 450C600 339.543 689.543 250 800 250C910.457 250 1000 339.543 1000 450C1000 560.457 910.457 650 800 650C689.543 650 600 560.457 600 450Z" fill="#C8E6C9"/>
+  <text x="800" y="800" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">FEEDING HOPE, REDUCING WASTE</text>
+</svg> 
