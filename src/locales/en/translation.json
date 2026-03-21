@@ -136,5 +136,43 @@
     "totalSpent": "Total Spent",
     "aboutTitle": "About FeedCoins",
     "aboutDesc": "FeedCoins are rewards for your positive impact on food waste reduction. They can be redeemed for products, services, or donated to causes."
+  },
+  "foodMap": {
+    "title": "Food Map",
+    "subtitle": "Find available food donations near you",
+    "tabMap": "Map",
+    "tabList": "List",
+    "searchFood": "Search food...",
+    "foodType": "Food Type",
+    "distance": "Distance: {dist} km",
+    "moreFilters": "More Filters",
+    "availableNearYou": "Available Near You",
+    "allAvailableFood": "All Available Food ({count})"
+  },
+  "donate": {
+    "title": "Donate Food",
+    "subtitle": "Create a FoodFlag to share your surplus food with those in need",
+    "reduceWaste": "Reduce Waste",
+    "feedCommunity": "Feed Community",
+    "earnRewards": "Earn Rewards",
+    "createFlagTitle": "Create a FoodFlag",
+    "createFlagDesc": "Fill in the details below to list your food donation"
+  },
+  "eco": {
+    "title": "Eco-Marketplace",
+    "subtitle": "Buy and sell sustainable food products using FeedCoins or INR",
+    "listItem": "List an Item",
+    "free": "Free",
+    "planUnlimited": "{plan} Plan — Unlimited Listings",
+    "planLimited": "{plan} Plan — {rem} of {max} listings remaining",
+    "priorityListing": "Priority listing enabled",
+    "upgradeListings": "Upgrade for More Listings",
+    "getPriority": "Get Priority Listing",
+    "sustainableTitle": "Sustainable Products",
+    "sustainableDesc": "All products are eco-friendly and sustainably sourced.",
+    "dualCurrencyTitle": "Dual Currency",
+    "dualCurrencyDesc": "Pay with FeedCoins earned from donations or with Indian Rupees.",
+    "envImpactTitle": "Environmental Impact",
+    "envImpactDesc": "Every purchase contributes to reducing food waste and supporting a greener planet."
   }
 }
