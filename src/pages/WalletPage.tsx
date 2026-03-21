@@ -30,7 +30,6 @@ interface Transaction {
 
 export default function WalletPage() {
   const navigate = useNavigate();
-  const { toast } = useToast();
   const { isAuthenticated, user } = useAuth();
   const [activeTab, setActiveTab] = useState<string>("balance");
   const [isLoading, setIsLoading] = useState(true);
@@ -41,14 +40,12 @@ export default function WalletPage() {
   // Redirect if not authenticated
   useEffect(() => {
     if (!isAuthenticated) {
-      toast({
-        title: "Authentication required",
+      toast.error("Authentication required", {
         description: "Please login to view your wallet",
-        variant: "destructive",
       });
       navigate("/login");
     }
-  }, [isAuthenticated, navigate, toast]);
+  }, [isAuthenticated, navigate]);
 
   // Fetch wallet data
   useEffect(() => {
@@ -86,8 +83,7 @@ export default function WalletPage() {
     // Mock refresh
     setTimeout(() => {
       setIsRefreshing(false);
-      toast({
-        title: "Wallet refreshed",
+      toast.success("Wallet refreshed", {
         description: "Your wallet information is up to date",
       });
     }, 1000);

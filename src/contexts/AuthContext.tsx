@@ -126,9 +126,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       });
 
-      if (error) return { error };
+      if (error) {
+        console.error('[Signup Error]', {
+          message: error.message,
+          status: error.status,
+          name: error.name,
+        });
+        // Provide a more helpful message for database errors
+        if (error.message?.includes('Database error')) {
+          const enhancedError = {
+            ...error,
+            message: 'Database error saving new user. Please contact support or try again later.',
+          };
+          return { error: enhancedError as AuthError };
+        }
+        return { error };
+      }
       return { error: null };
-    } catch (error) {
+    } catch (error: any) {
+      console.error('[Signup Unexpected Error]', error);
       return { error };
     }
   };
