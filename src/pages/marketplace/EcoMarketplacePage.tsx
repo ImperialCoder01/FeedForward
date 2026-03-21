@@ -10,8 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { useSubscription } from "@/contexts/SubscriptionContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const EcoMarketplacePage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const { currentPlan, canCreateListing, remainingListings } = useSubscription();
@@ -30,9 +32,9 @@ const EcoMarketplacePage = () => {
               <TreePine className="h-10 w-10 text-green-600" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight">Eco-Friendly Marketplace</h1>
+          <h1 className="text-4xl font-bold tracking-tight">{t('eco.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Support sustainability by purchasing eco-friendly products from our partners and sponsors
+            {t('eco.subtitle')}
           </p>
         </motion.div>
         <div className="flex flex-col items-end gap-2">
@@ -45,7 +47,7 @@ const EcoMarketplacePage = () => {
               className="bg-green-600 hover:bg-green-700"
             >
               <Plus className="h-4 w-4 mr-2" />
-              List Item
+              {t('eco.listItem')}
             </Button>
           )}
         </div>
@@ -61,15 +63,18 @@ const EcoMarketplacePage = () => {
               ) : currentPlan.name === 'Pro' ? (
                 <Zap className="h-6 w-6 text-purple-600" />
               ) : (
-                <Badge variant="outline">Free</Badge>
+                <Badge variant="outline">{t('eco.free')}</Badge>
               )}
               <div>
                 <p className="font-medium">
-                  {currentPlan.name} Plan - {currentPlan.max_listings_unlimited ? 'Unlimited' : `${remainingListings || 0} of ${currentPlan.max_listings}`} listings
+                  {currentPlan.max_listings_unlimited 
+                    ? t('eco.planUnlimited').replace('{plan}', currentPlan.name)
+                    : t('eco.planLimited').replace('{plan}', currentPlan.name).replace('{rem}', (remainingListings || 0).toString()).replace('{max}', currentPlan.max_listings.toString())
+                  }
                 </p>
                 {currentPlan.priority_listing && (
                   <p className="text-xs text-muted-foreground flex items-center gap-1">
-                    <Star className="h-3 w-3 text-yellow-500" /> Priority listing enabled
+                    <Star className="h-3 w-3 text-yellow-500" /> {t('eco.priorityListing')}
                   </p>
                 )}
               </div>
@@ -77,13 +82,13 @@ const EcoMarketplacePage = () => {
             {!canCreateListing && (
               <Button size="sm" onClick={() => navigate('/plans')}>
                 <Zap className="h-4 w-4 mr-2" />
-                Upgrade for More Listings
+                {t('eco.upgradeListings')}
               </Button>
             )}
             {currentPlan.name === 'Free' && canCreateListing && (
               <Button size="sm" variant="outline" onClick={() => navigate('/plans')}>
                 <Zap className="h-4 w-4 mr-2" />
-                Get Priority Listing
+                {t('eco.getPriority')}
               </Button>
             )}
           </div>
@@ -94,30 +99,30 @@ const EcoMarketplacePage = () => {
         <div className="bg-green-50 p-6 rounded-lg border border-green-100">
           <div className="flex items-center gap-2 mb-2">
             <Recycle className="h-5 w-5 text-green-600" />
-            <h3 className="font-semibold text-green-800">Sustainable Choices</h3>
+            <h3 className="font-semibold text-green-800">{t('eco.sustainableTitle')}</h3>
           </div>
           <p className="text-sm text-green-700">
-            Every purchase from our marketplace supports sustainable practices and reduces waste in our communities.
+            {t('eco.sustainableDesc')}
           </p>
         </div>
 
         <div className="bg-green-50 p-6 rounded-lg border border-green-100">
           <div className="flex items-center gap-2 mb-2">
             <IndianRupee className="h-5 w-5 text-green-600" />
-            <h3 className="font-semibold text-green-800">Dual Currency Options</h3>
+            <h3 className="font-semibold text-green-800">{t('eco.dualCurrencyTitle')}</h3>
           </div>
           <p className="text-sm text-green-700">
-            Choose to pay with traditional currency or use your earned FeedCoins to purchase products at special rates.
+            {t('eco.dualCurrencyDesc')}
           </p>
         </div>
 
         <div className="bg-green-50 p-6 rounded-lg border border-green-100">
           <div className="flex items-center gap-2 mb-2">
             <TreePine className="h-5 w-5 text-green-600" />
-            <h3 className="font-semibold text-green-800">Environmental Impact</h3>
+            <h3 className="font-semibold text-green-800">{t('eco.envImpactTitle')}</h3>
           </div>
           <p className="text-sm text-green-700">
-            Each product's environmental impact is transparently displayed, helping you make informed decisions.
+            {t('eco.envImpactDesc')}
           </p>
         </div>
       </div>

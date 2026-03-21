@@ -10,8 +10,10 @@ import { Grid2x2, List, Plus, ShoppingBag } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function MarketplacePage() {
+  const { t } = useTranslation();
   const { products, loading, addProduct } = useMarketplace();
   const { isAuthenticated } = useAuth();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -34,8 +36,8 @@ export default function MarketplacePage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold">Marketplace</h1>
-          <p className="text-muted-foreground">Browse products or sell your own</p>
+          <h1 className="text-3xl font-bold">{t('marketplace.title')}</h1>
+          <p className="text-muted-foreground">{t('marketplace.subtitle')}</p>
         </div>
         
         <div className="flex space-x-2 mt-4 md:mt-0">
@@ -47,13 +49,13 @@ export default function MarketplacePage() {
               >
                 <Link to="/seller-dashboard">
                   <ShoppingBag className="h-4 w-4 mr-2" />
-                  Seller Dashboard
+                  {t('marketplace.sellerDash')}
                 </Link>
               </Button>
               
               <Button onClick={() => setIsFormOpen(true)}>
                 <Plus className="h-4 w-4 mr-2" />
-                Add Product
+                {t('marketplace.addProduct')}
               </Button>
             </>
           )}
@@ -81,9 +83,9 @@ export default function MarketplacePage() {
 
       <Tabs defaultValue="all" className="mb-6">
         <TabsList>
-          <TabsTrigger value="all">All Products</TabsTrigger>
-          <TabsTrigger value="perishable">Perishable</TabsTrigger>
-          <TabsTrigger value="non-perishable">Non-Perishable</TabsTrigger>
+          <TabsTrigger value="all">{t('marketplace.tabAll')}</TabsTrigger>
+          <TabsTrigger value="perishable">{t('marketplace.tabPerishable')}</TabsTrigger>
+          <TabsTrigger value="non-perishable">{t('marketplace.tabNonPerishable')}</TabsTrigger>
         </TabsList>
       </Tabs>
 
@@ -96,9 +98,9 @@ export default function MarketplacePage() {
       ) : products.length === 0 ? (
         <div className="text-center py-12">
           <ShoppingBag className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-medium">No products found</h3>
+          <h3 className="text-lg font-medium">{t('marketplace.noProductsTitle')}</h3>
           <p className="text-muted-foreground">
-            Try changing your filters or add your own products to the marketplace.
+            {t('marketplace.noProductsDesc')}
           </p>
           {isAuthenticated && (
             <Button 
@@ -107,7 +109,7 @@ export default function MarketplacePage() {
               onClick={() => setIsFormOpen(true)}
             >
               <Plus className="h-4 w-4 mr-2" />
-              Add Product
+              {t('marketplace.addProduct')}
             </Button>
           )}
         </div>

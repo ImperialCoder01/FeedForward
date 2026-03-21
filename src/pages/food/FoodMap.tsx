@@ -41,6 +41,7 @@ import { MapPin, Search, Filter, List, Grid3X3, Clock, Calendar } from "lucide-r
 import { toast } from "sonner";
 import InteractiveMap from "@/components/InteractiveMap";
 import foodFlagsService from "@/services/foodFlags";
+import { useTranslation } from "react-i18next";
 
 // Define the filter form schema
 const filterFormSchema = z.object({
@@ -53,6 +54,7 @@ const filterFormSchema = z.object({
 type FilterFormValues = z.infer<typeof filterFormSchema>;
 
 export default function FoodMap() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [view, setView] = useState<"map" | "list">("map");
   const [distance, setDistance] = useState([5]);
@@ -150,8 +152,8 @@ export default function FoodMap() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
-          <h1 className="text-3xl font-bold">Food Map</h1>
-          <p className="text-muted-foreground">Browse and claim available food donations near you</p>
+          <h1 className="text-3xl font-bold">{t('foodMap.title')}</h1>
+          <p className="text-muted-foreground">{t('foodMap.subtitle')}</p>
         </div>
         
         <div className="flex gap-2">
@@ -163,11 +165,11 @@ export default function FoodMap() {
             <TabsList className="w-full">
               <TabsTrigger value="map" className="flex-1">
                 <MapPin className="h-4 w-4 mr-2" />
-                Map
+                {t('foodMap.tabMap')}
               </TabsTrigger>
               <TabsTrigger value="list" className="flex-1">
                 <List className="h-4 w-4 mr-2" />
-                List
+                {t('foodMap.tabList')}
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -183,7 +185,7 @@ export default function FoodMap() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search for food..."
+            placeholder={t('foodMap.searchFood')}
             className="pl-9"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -193,7 +195,7 @@ export default function FoodMap() {
         <div>
           <Select value={foodType} onValueChange={setFoodType}>
             <SelectTrigger>
-              <SelectValue placeholder="Food Type" />
+              <SelectValue placeholder={t('foodMap.foodType')} />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Types</SelectItem>
@@ -206,7 +208,7 @@ export default function FoodMap() {
         </div>
         
         <div className="flex flex-col gap-1">
-          <label className="text-sm font-medium">Distance: {distance[0]} km</label>
+          <label className="text-sm font-medium">{t('foodMap.distance').replace('{dist}', distance[0].toString())}</label>
           <Slider
             value={distance}
             onValueChange={setDistance}
@@ -220,7 +222,7 @@ export default function FoodMap() {
           <SheetTrigger asChild>
             <Button variant="outline" className="w-full">
               <Filter className="h-4 w-4 mr-2" />
-              More Filters
+              {t('foodMap.moreFilters')}
             </Button>
           </SheetTrigger>
           <SheetContent>
@@ -378,7 +380,7 @@ export default function FoodMap() {
             />
           </div>
           
-          <h3 className="text-xl font-medium mb-4">Available Near You</h3>
+          <h3 className="text-xl font-medium mb-4">{t('foodMap.availableNearYou')}</h3>
           <FoodFlagGrid 
             foodFlags={sortedFlags.slice(0, 3)} 
             onFoodFlagClick={(id) => navigate(`/food/${id}`)}
@@ -387,7 +389,7 @@ export default function FoodMap() {
         
         <TabsContent value="list" className="mt-0 animate-fade-in">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-medium">All Available Food ({sortedFlags.length})</h3>
+            <h3 className="text-xl font-medium">{t('foodMap.allAvailableFood').replace('{count}', sortedFlags.length.toString())}</h3>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" className="h-8 w-8 p-0">
                 <Grid3X3 className="h-4 w-4" />

@@ -10,8 +10,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import type { FarmerDonation } from "@/types/donations";
+import { useTranslation } from "react-i18next";
 
 export default function FarmerDonations() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user } = useAuth();
   const { toast } = useToast();
@@ -52,8 +54,8 @@ export default function FarmerDonations() {
       if (error) throw error;
 
       toast({
-        title: "Success",
-        description: "Your donation has been registered successfully.",
+        title: t('farmer.successTitle'),
+        description: t('farmer.successDesc'),
       });
 
       // Reset form
@@ -73,7 +75,7 @@ export default function FarmerDonations() {
     } catch (error) {
       const err = error instanceof Error ? error : new Error(String(error));
       toast({
-        title: "Error",
+        title: t('farmer.errorTitle'),
         description: err.message,
         variant: "destructive",
       });
@@ -85,29 +87,29 @@ export default function FarmerDonations() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Donate Excess Crops</h1>
+        <h1 className="text-3xl font-bold mb-8">{t('farmer.title')}</h1>
 
         <Card>
           <CardHeader>
-            <CardTitle>Donation Details</CardTitle>
+            <CardTitle>{t('farmer.details')}</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Crop Name</label>
+                  <label className="text-sm font-medium">{t('farmer.cropName')}</label>
                   <Input
                     required
                     value={formData.crop_name}
                     onChange={(e) =>
                       setFormData({ ...formData, crop_name: e.target.value })
                     }
-                    placeholder="Enter crop name"
+                    placeholder={t('farmer.cropNamePlaceholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Quantity (in kg)</label>
+                  <label className="text-sm font-medium">{t('farmer.quantity')}</label>
                   <Input
                     required
                     type="number"
@@ -115,36 +117,36 @@ export default function FarmerDonations() {
                     onChange={(e) =>
                       setFormData({ ...formData, quantity: e.target.value })
                     }
-                    placeholder="Enter quantity"
+                    placeholder={t('farmer.quantityPlaceholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Market Price (optional)</label>
+                  <label className="text-sm font-medium">{t('farmer.marketPrice')}</label>
                   <Input
                     type="number"
                     value={formData.market_price}
                     onChange={(e) =>
                       setFormData({ ...formData, market_price: e.target.value })
                     }
-                    placeholder="Enter market price"
+                    placeholder={t('farmer.marketPricePlaceholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Location</label>
+                  <label className="text-sm font-medium">{t('farmer.location')}</label>
                   <Input
                     required
                     value={formData.location}
                     onChange={(e) =>
                       setFormData({ ...formData, location: e.target.value })
                     }
-                    placeholder="Enter pickup location"
+                    placeholder={t('farmer.locationPlaceholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Phone Number</label>
+                  <label className="text-sm font-medium">{t('farmer.phone')}</label>
                   <Input
                     value={formData.contact_details.phone}
                     onChange={(e) =>
@@ -156,12 +158,12 @@ export default function FarmerDonations() {
                         },
                       })
                     }
-                    placeholder="Enter contact number"
+                    placeholder={t('farmer.phonePlaceholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Pickup Date</label>
+                  <label className="text-sm font-medium">{t('farmer.pickupDate')}</label>
                   <Input
                     type="date"
                     value={formData.pickup_date}
@@ -173,20 +175,20 @@ export default function FarmerDonations() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">Reason for Donation</label>
+                <label className="text-sm font-medium">{t('farmer.reason')}</label>
                 <Textarea
                   value={formData.reason}
                   onChange={(e) =>
                     setFormData({ ...formData, reason: e.target.value })
                   }
-                  placeholder="Share why you're donating these crops..."
+                  placeholder={t('farmer.reasonPlaceholder')}
                   rows={4}
                 />
               </div>
 
               <Button type="submit" className="w-full" disabled={loading}>
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Submit Donation
+                {t('farmer.submit')}
               </Button>
             </form>
           </CardContent>

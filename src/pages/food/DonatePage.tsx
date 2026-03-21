@@ -53,6 +53,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import foodFlagsService from "@/services/foodFlags";
 import rewardsService from "@/services/rewards";
 import { supabase } from "@/integrations/supabase/client";
+import { useTranslation } from "react-i18next";
 
 // Create a schema for food donation
 const donationFormSchema = z.object({
@@ -103,6 +104,7 @@ const donationFormSchema = z.object({
 type DonationFormValues = z.infer<typeof donationFormSchema>;
 
 export default function DonatePage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -244,9 +246,9 @@ export default function DonatePage() {
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">Donate Surplus Food</h1>
+          <h1 className="text-3xl font-bold mb-2">{t('donate.title')}</h1>
           <p className="text-muted-foreground">
-            Create a FoodFlag to share your surplus food with those in need
+            {t('donate.subtitle')}
           </p>
         </div>
         
@@ -256,7 +258,7 @@ export default function DonatePage() {
               <div className="h-10 w-10 rounded-full bg-ff-green/20 flex items-center justify-center">
                 <CheckCircle className="h-5 w-5 text-ff-green" />
               </div>
-              <CardTitle className="text-lg">Reduce Waste</CardTitle>
+              <CardTitle className="text-lg">{t('donate.reduceWaste')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
@@ -270,7 +272,7 @@ export default function DonatePage() {
               <div className="h-10 w-10 rounded-full bg-ff-orange/20 flex items-center justify-center">
                 <CheckCircle className="h-5 w-5 text-ff-orange" />
               </div>
-              <CardTitle className="text-lg">Feed Community</CardTitle>
+              <CardTitle className="text-lg">{t('donate.feedCommunity')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
@@ -284,7 +286,7 @@ export default function DonatePage() {
               <div className="h-10 w-10 rounded-full bg-ff-yellow/20 flex items-center justify-center">
                 <CheckCircle className="h-5 w-5 text-ff-yellow" />
               </div>
-              <CardTitle className="text-lg">Earn Rewards</CardTitle>
+              <CardTitle className="text-lg">{t('donate.earnRewards')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
@@ -296,9 +298,9 @@ export default function DonatePage() {
         
         <Card className="animate-fade-in" style={{animationDelay: "0.4s"}}>
           <CardHeader>
-            <CardTitle>Create a FoodFlag</CardTitle>
+            <CardTitle>{t('donate.createFlagTitle')}</CardTitle>
             <CardDescription>
-              Fill out the details about the food you're donating
+              {t('donate.createFlagDesc')}
             </CardDescription>
           </CardHeader>
           <CardContent>

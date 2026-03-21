@@ -7,8 +7,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "sonner";
 import { LogIn, AtSign, Lock } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const { login, isAuthenticated, loading } = useAuth();
@@ -53,16 +55,16 @@ export default function Login() {
     <div className="container max-w-md py-12 mx-auto">
       <Card className="border-2 animate-fade-in">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center">Welcome back</CardTitle>
+          <CardTitle className="text-2xl text-center">{t('auth.welcomeBack')}</CardTitle>
           <CardDescription className="text-center">
-            Enter your credentials to access your account
+            {t('auth.enterCredentials')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin}>
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('auth.email')}</Label>
                 <div className="relative">
                   <AtSign className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
@@ -78,9 +80,9 @@ export default function Login() {
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">{t('auth.password')}</Label>
                   <Link to="/forgot-password" className="text-sm text-muted-foreground hover:text-primary">
-                    Forgot password?
+                    {t('auth.forgotPassword')}
                   </Link>
                 </div>
                 <div className="relative">
@@ -97,9 +99,9 @@ export default function Login() {
               </div>
               <Button className="w-full btn-gradient" type="submit" disabled={isLoading || loading}>
                 {isLoading ? (
-                  <><span className="mr-2">Logging in</span><span className="animate-pulse">...</span></>
+                  <><span className="mr-2">{t('auth.loggingIn')}</span><span className="animate-pulse">...</span></>
                 ) : (
-                  <><LogIn className="mr-2 h-4 w-4" /> Sign in</>
+                  <><LogIn className="mr-2 h-4 w-4" /> {t('auth.signIn')}</>
                 )}
               </Button>
             </div>
@@ -107,9 +109,9 @@ export default function Login() {
         </CardContent>
         <CardFooter className="flex flex-col">
           <div className="mt-2 text-center text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            {t('auth.noAccount')}{" "}
             <Link to="/signup" className="text-primary hover:underline">
-              Sign up
+              {t('auth.signUp')}
             </Link>
           </div>
         </CardFooter>

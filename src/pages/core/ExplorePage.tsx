@@ -51,6 +51,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useTranslation } from "react-i18next";
 
 // Sample data for organizations
 const organizations = [
@@ -313,6 +314,7 @@ const foodDonations = [
 ];
 
 const ExplorePage: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("organizations");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -419,17 +421,17 @@ const ExplorePage: React.FC = () => {
     <div className="container py-8 max-w-7xl">
       <div className="space-y-2">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-          Explore
+          {t('explore.title')}
         </h1>
         <p className="text-xl text-muted-foreground">
-          Discover food donations and organizations in our community
+          {t('explore.subtitle')}
         </p>
       </div>
 
       <Tabs defaultValue="organizations" value={activeTab} onValueChange={setActiveTab} className="mt-8">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="organizations">Organizations</TabsTrigger>
-          <TabsTrigger value="donations">Available Food</TabsTrigger>
+          <TabsTrigger value="organizations">{t('explore.tabOrgs')}</TabsTrigger>
+          <TabsTrigger value="donations">{t('explore.tabFood')}</TabsTrigger>
         </TabsList>
         
         <div className="flex flex-wrap items-center gap-4 mt-6">

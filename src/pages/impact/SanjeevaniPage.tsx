@@ -40,6 +40,7 @@ import { ReliefKitCard } from "@/components/disaster/ReliefKitCard";
 import { DisasterTimeline } from "@/components/disaster/DisasterTimeline";
 import { useNavigate } from "react-router-dom";
 import { DonationConfirmDialog } from "@/components/disaster/DonationConfirmDialog";
+import { useTranslation } from "react-i18next";
 
 // Sample data for active disasters
 const activeDisasters = [
@@ -195,6 +196,7 @@ const impactMetrics = {
 };
 
 const SanjeevaniPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [disasterFilter, setDisasterFilter] = useState("all");
   const [selectedDisaster, setSelectedDisaster] = useState<string | null>(null);
@@ -250,10 +252,10 @@ const SanjeevaniPage = () => {
       <section className="text-center space-y-6">
         <div className="space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold bg-red-500 text-transparent">
-            SANJEEVANI
+            {t('sanjeevani.title')}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Direct Relief When It Matters Most
+            {t('sanjeevani.subtitle')}
           </p>
         </div>
 
@@ -265,23 +267,23 @@ const SanjeevaniPage = () => {
         >
           <div className="bg-background border rounded-lg p-4 shadow-sm">
             <p className="text-2xl md:text-3xl font-bold">₹{(impactMetrics.totalDonations/100000).toFixed(1)}L</p>
-            <p className="text-sm text-muted-foreground">Total Donations</p>
+            <p className="text-sm text-muted-foreground">{t('sanjeevani.totalDonations')}</p>
           </div>
           <div className="bg-background border rounded-lg p-4 shadow-sm">
             <p className="text-2xl md:text-3xl font-bold">{(impactMetrics.foodDonated/1000).toFixed(1)}K kg</p>
-            <p className="text-sm text-muted-foreground">Food Donated</p>
+            <p className="text-sm text-muted-foreground">{t('sanjeevani.foodDonated')}</p>
           </div>
           <div className="bg-background border rounded-lg p-4 shadow-sm">
             <p className="text-2xl md:text-3xl font-bold">{(impactMetrics.mealsProvided/1000).toFixed(1)}K</p>
-            <p className="text-sm text-muted-foreground">Meals Provided</p>
+            <p className="text-sm text-muted-foreground">{t('sanjeevani.mealsProvided')}</p>
           </div>
           <div className="bg-background border rounded-lg p-4 shadow-sm">
             <p className="text-2xl md:text-3xl font-bold">{(impactMetrics.livesImpacted/1000).toFixed(1)}K</p>
-            <p className="text-sm text-muted-foreground">Lives Impacted</p>
+            <p className="text-sm text-muted-foreground">{t('sanjeevani.livesImpacted')}</p>
           </div>
           <div className="bg-background border rounded-lg p-4 shadow-sm">
             <p className="text-2xl md:text-3xl font-bold">{impactMetrics.disastersResponded}</p>
-            <p className="text-sm text-muted-foreground">Disasters Responded</p>
+            <p className="text-sm text-muted-foreground">{t('sanjeevani.disastersResponded')}</p>
           </div>
         </motion.div>
 
@@ -290,16 +292,16 @@ const SanjeevaniPage = () => {
           className="bg-red-600 hover:bg-red-700 text-white px-8"
           onClick={() => setActiveTab("donate")}
         >
-          Donate Now
+          {t('sanjeevani.donateNow')}
         </Button>
       </section>
 
       {/* Main Content Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid grid-cols-3 mb-8 w-full max-w-md mx-auto">
-          <TabsTrigger value="disasters">Active Disasters</TabsTrigger>
-          <TabsTrigger value="donate">Relief Kits</TabsTrigger>
-          <TabsTrigger value="details" disabled={!selectedDisaster}>Disaster Details</TabsTrigger>
+          <TabsTrigger value="disasters">{t('sanjeevani.tabDisasters')}</TabsTrigger>
+          <TabsTrigger value="donate">{t('sanjeevani.tabKits')}</TabsTrigger>
+          <TabsTrigger value="details" disabled={!selectedDisaster}>{t('sanjeevani.tabDetails')}</TabsTrigger>
         </TabsList>
 
         {/* Active Disasters Dashboard */}

@@ -10,8 +10,10 @@ import { toast } from "sonner";
 import { User, Lock, AtSign } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTranslation } from "react-i18next";
 
 export default function SignUp() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const { signup, isAuthenticated, loading } = useAuth();
@@ -98,16 +100,16 @@ export default function SignUp() {
     <div className="container max-w-md py-12 mx-auto">
       <Card className="border-2 animate-fade-in">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center">Create an account</CardTitle>
+          <CardTitle className="text-2xl text-center">{t('auth.createAccount')}</CardTitle>
           <CardDescription className="text-center">
-            Join FeedForward and start making a difference
+            {t('auth.joinFeedForward')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
+                <Label htmlFor="name">{t('auth.fullName')}</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
@@ -123,7 +125,7 @@ export default function SignUp() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('auth.email')}</Label>
                 <div className="relative">
                   <AtSign className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
@@ -140,7 +142,7 @@ export default function SignUp() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">{t('auth.password')}</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
@@ -156,7 +158,7 @@ export default function SignUp() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword">Confirm Password</Label>
+                <Label htmlFor="confirmPassword">{t('auth.confirmPassword')}</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input 
@@ -172,7 +174,7 @@ export default function SignUp() {
               </div>
 
               <div className="space-y-2">
-                <Label>I am a:</Label>
+                <Label>{t('auth.iAmA')}</Label>
                 <RadioGroup 
                   value={formState.userType} 
                   onValueChange={handleRadioChange}
@@ -180,11 +182,11 @@ export default function SignUp() {
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="individual" id="individual" />
-                    <Label htmlFor="individual">Individual</Label>
+                    <Label htmlFor="individual">{t('auth.individual')}</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="organization" id="organization" />
-                    <Label htmlFor="organization">Organization</Label>
+                    <Label htmlFor="organization">{t('auth.organization')}</Label>
                   </div>
                 </RadioGroup>
               </div>
@@ -196,18 +198,18 @@ export default function SignUp() {
                   onCheckedChange={handleCheckboxChange}
                 />
                 <Label htmlFor="terms" className="text-sm text-muted-foreground">
-                  I agree to the{" "}
+                  {t('auth.iAgreeTo')}{" "}
                   <Link to="/terms" className="text-primary hover:underline">
-                    terms and conditions
+                    {t('auth.termsAndConditions')}
                   </Link>
                 </Label>
               </div>
 
               <Button className="w-full btn-gradient" type="submit" disabled={isLoading}>
                 {isLoading ? (
-                  <><span className="mr-2">Creating account</span><span className="animate-pulse">...</span></>
+                  <><span className="mr-2">{t('auth.creatingAccount')}</span><span className="animate-pulse">...</span></>
                 ) : (
-                  "Create Account"
+                  t('auth.createAccount')
                 )}
               </Button>
             </div>
@@ -215,9 +217,9 @@ export default function SignUp() {
         </CardContent>
         <CardFooter className="flex flex-col">
           <div className="mt-2 text-center text-sm text-muted-foreground">
-            Already have an account?{" "}
+            {t('auth.alreadyHaveAccount')}{" "}
             <Link to="/login" className="text-primary hover:underline">
-              Sign in
+              {t('auth.signIn')}
             </Link>
           </div>
         </CardFooter>

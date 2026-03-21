@@ -45,6 +45,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTranslation } from "react-i18next";
 
 const volunteerOpportunities = [
   {
@@ -117,6 +118,7 @@ const volunteerFormSchema = z.object({
 type VolunteerFormValues = z.infer<typeof volunteerFormSchema>;
 
 const VolunteerPage: React.FC = () => {
+  const { t } = useTranslation();
   const { isAuthenticated } = useAuth();
   const [activeTab, setActiveTab] = useState("roles");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -169,18 +171,18 @@ const VolunteerPage: React.FC = () => {
     <div className="container py-8 space-y-8 max-w-7xl">
       <div className="space-y-2">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-          Volunteer with FeedForward
+          {t('volunteer.title')}
         </h1>
         <p className="text-xl text-muted-foreground">
-          Be the bridge between food surplus and those in need
+          {t('volunteer.subtitle')}
         </p>
       </div>
 
       <Tabs defaultValue="roles" value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="roles">Volunteer Roles</TabsTrigger>
-          <TabsTrigger value="opportunities">Active Opportunities</TabsTrigger>
-          <TabsTrigger value="signup">Volunteer Signup</TabsTrigger>
+          <TabsTrigger value="roles">{t('volunteer.tabRoles')}</TabsTrigger>
+          <TabsTrigger value="opportunities">{t('volunteer.tabOpps')}</TabsTrigger>
+          <TabsTrigger value="signup">{t('volunteer.tabSignup')}</TabsTrigger>
         </TabsList>
         
         <TabsContent value="roles" className="space-y-6 mt-6">
@@ -338,7 +340,7 @@ const VolunteerPage: React.FC = () => {
           
           <div className="flex justify-center mt-6">
             <Button onClick={() => setActiveTab("signup")} className="animate-fade-in">
-              Sign Up as Volunteer
+              {t('volunteer.signUpBtn')}
             </Button>
           </div>
         </TabsContent>
@@ -761,14 +763,14 @@ const VolunteerPage: React.FC = () => {
           ) : (
             <Card className="text-center p-6 max-w-md mx-auto">
               <CardHeader>
-                <CardTitle>Sign in Required</CardTitle>
+                <CardTitle>{t('volunteer.signinReq')}</CardTitle>
                 <CardDescription>
-                  You need to be signed in to register as a volunteer
+                  {t('volunteer.signinDesc')}
                 </CardDescription>
               </CardHeader>
               <CardFooter className="flex justify-center">
                 <Button onClick={handleSignIn}>
-                  Sign In to Continue
+                  {t('volunteer.signinBtn')}
                 </Button>
               </CardFooter>
             </Card>

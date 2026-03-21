@@ -18,23 +18,25 @@ import {
   MoveRight,
   Database 
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const AboutPage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="container py-8 space-y-10 max-w-7xl">
       <section className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-            About FeedForward
+            {t('about.title')}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Every meal shared is a life touched, every action counts
+            {t('about.subtitle')}
           </p>
         </div>
         
         <Card className="bg-red-50/50 border-red-100 dark:bg-red-950/20">
           <CardContent className="p-6">
-            <h2 className="text-2xl font-bold text-red-600 mb-4">The Crisis We Face</h2>
+            <h2 className="text-2xl font-bold text-red-600 mb-4">{t('about.crisis')}</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center p-4 bg-white/50 rounded-lg shadow-sm">
                 <span className="text-3xl font-bold text-red-600">9 Million</span>
@@ -55,7 +57,7 @@ const AboutPage: React.FC = () => {
 
       <section className="space-y-6">
         <div className="flex flex-col space-y-3">
-          <h2 className="text-3xl font-bold tracking-tight">Faces of Hunger</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('about.faces')}</h2>
           <p className="text-xl text-muted-foreground">
             Behind every statistic is a human story
           </p>
@@ -144,7 +146,7 @@ const AboutPage: React.FC = () => {
 
       <section className="space-y-6">
         <div className="flex flex-col space-y-3">
-          <h2 className="text-3xl font-bold tracking-tight">The Harsh Reality</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('about.reality')}</h2>
           <p className="text-xl text-muted-foreground">
             Facts that demand our immediate attention and action
           </p>
@@ -177,7 +179,7 @@ const AboutPage: React.FC = () => {
 
       <section className="space-y-6">
         <div className="flex flex-col space-y-3">
-          <h2 className="text-3xl font-bold tracking-tight">How We're Solving It</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('about.solving')}</h2>
           <p className="text-xl text-muted-foreground">
             Our approach to bridging the gap between food surplus and hunger
           </p>
@@ -254,7 +256,7 @@ const AboutPage: React.FC = () => {
 
       <section className="space-y-6">
         <div className="flex flex-col space-y-3">
-          <h2 className="text-3xl font-bold tracking-tight">Why FeedForward?</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('about.why')}</h2>
           <p className="text-xl text-muted-foreground">
             What makes our platform unique
           </p>
@@ -335,7 +337,7 @@ const AboutPage: React.FC = () => {
       <Separator />
       
       <section className="space-y-4 text-center max-w-3xl mx-auto py-8">
-        <h2 className="text-3xl font-bold">Join Us in Making a Difference</h2>
+        <h2 className="text-3xl font-bold">{t('about.joinUs')}</h2>
         <p className="text-lg text-muted-foreground mb-6">
           Your action today can save a life tomorrow. Together, we can create a world where no one goes to bed hungry.
         </p>
@@ -344,14 +346,14 @@ const AboutPage: React.FC = () => {
             href="/volunteer" 
             className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-red-600 text-white hover:bg-red-700 h-10 px-4 py-2"
           >
-            Become a Volunteer
+            {t('about.volunteer')}
             <Heart className="ml-2 h-4 w-4" />
           </a>
           <a 
             href="/donate" 
             className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
           >
-            Donate Now
+            {t('about.donate')}
             <MoveRight className="ml-2 h-4 w-4" />
           </a>
         </div>

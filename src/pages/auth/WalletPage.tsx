@@ -17,6 +17,7 @@ import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { Wallet, History, ArrowUp, ArrowDown, Users, Award, Coins, RefreshCw, Send } from "lucide-react";
 import rewardsService from "@/services/rewards";
+import { useTranslation } from "react-i18next";
 
 // Mock transaction data
 interface Transaction {
@@ -29,6 +30,7 @@ interface Transaction {
 }
 
 export default function WalletPage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { isAuthenticated, user } = useAuth();
   const [activeTab, setActiveTab] = useState<string>("balance");
@@ -123,8 +125,8 @@ export default function WalletPage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <div>
-          <h1 className="text-3xl font-bold">FeedCoin Wallet</h1>
-          <p className="text-muted-foreground">Manage your impact rewards</p>
+          <h1 className="text-3xl font-bold">{t('wallet.title')}</h1>
+          <p className="text-muted-foreground">{t('wallet.subtitle')}</p>
         </div>
         
         <div className="flex gap-2 mt-4 md:mt-0">
@@ -135,7 +137,7 @@ export default function WalletPage() {
             disabled={isRefreshing}
           >
             <RefreshCw className={`h-4 w-4 mr-1 ${isRefreshing ? 'animate-spin' : ''}`} />
-            Refresh
+            {t('wallet.refresh')}
           </Button>
           
           <Button 
@@ -144,7 +146,7 @@ export default function WalletPage() {
             onClick={() => navigate('/marketplace')}
           >
             <Award className="h-4 w-4 mr-1" />
-            Marketplace
+            {t('wallet.marketplace')}
           </Button>
         </div>
       </div>
@@ -154,8 +156,8 @@ export default function WalletPage() {
         <div className="md:col-span-2">
           <Card className="animate-fade-in">
             <CardHeader className="pb-2">
-              <CardTitle>FeedCoin Balance</CardTitle>
-              <CardDescription>Your current earning and spending power</CardDescription>
+              <CardTitle>{t('wallet.balanceTitle')}</CardTitle>
+              <CardDescription>{t('wallet.balanceDesc')}</CardDescription>
             </CardHeader>
             <CardContent className="py-6">
               {isLoading ? (
@@ -170,18 +172,18 @@ export default function WalletPage() {
                     </div>
                     <div>
                       <div className="text-3xl md:text-4xl font-bold">{feedCoinBalance} FC</div>
-                      <div className="text-sm text-muted-foreground">FeedCoin Balance</div>
+                      <div className="text-sm text-muted-foreground">{t('wallet.balanceTitle')}</div>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     <Button className="btn-gradient">
                       <Award className="mr-2 h-4 w-4" />
-                      Redeem Rewards
+                      {t('wallet.redeem')}
                     </Button>
                     <Button variant="outline">
                       <Send className="mr-2 h-4 w-4" />
-                      Send FeedCoins
+                      {t('wallet.send')}
                     </Button>
                   </div>
                 </div>
@@ -191,8 +193,8 @@ export default function WalletPage() {
 
           <Card className="mt-6 animate-fade-in" style={{animationDelay: "0.1s"}}>
             <CardHeader>
-              <CardTitle>Transaction History</CardTitle>
-              <CardDescription>Your recent FeedCoin activity</CardDescription>
+              <CardTitle>{t('wallet.transHistoryTitle')}</CardTitle>
+              <CardDescription>{t('wallet.transHistoryDesc')}</CardDescription>
             </CardHeader>
             <CardContent>
               {isLoading ? (
@@ -202,9 +204,9 @@ export default function WalletPage() {
               ) : transactions.length === 0 ? (
                 <div className="text-center py-8">
                   <History className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <p>No transactions yet</p>
+                  <p>{t('wallet.noTransTitle')}</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Start donating or claiming food to earn FeedCoins
+                    {t('wallet.noTransDesc')}
                   </p>
                 </div>
               ) : (
@@ -230,7 +232,7 @@ export default function WalletPage() {
             </CardContent>
             <CardFooter className="border-t pt-4">
               <Button variant="outline" size="sm" className="w-full">
-                View All Transactions
+                {t('wallet.viewAllTrans')}
               </Button>
             </CardFooter>
           </Card>
@@ -240,52 +242,52 @@ export default function WalletPage() {
         <div>
           <Card className="animate-fade-in" style={{animationDelay: "0.2s"}}>
             <CardHeader>
-              <CardTitle>Earning Opportunities</CardTitle>
-              <CardDescription>Ways to increase your FeedCoin balance</CardDescription>
+              <CardTitle>{t('wallet.earningOppsTitle')}</CardTitle>
+              <CardDescription>{t('wallet.earningOppsDesc')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="p-4 border rounded-md hover:bg-muted transition-colors">
                 <div className="flex justify-between items-center">
-                  <div className="font-medium">Donate Food</div>
+                  <div className="font-medium">{t('wallet.donateFood')}</div>
                   <Badge variant="outline" className="bg-ff-green/20 text-ff-green">
                     +30-100 FC
                   </Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Create FoodFlags for surplus food
+                  {t('wallet.donateFoodDesc')}
                 </p>
                 <Button variant="outline" size="sm" className="mt-2 w-full">
-                  Donate Now
+                  {t('wallet.donateNow')}
                 </Button>
               </div>
               
               <div className="p-4 border rounded-md hover:bg-muted transition-colors">
                 <div className="flex justify-between items-center">
-                  <div className="font-medium">Refer Friends</div>
+                  <div className="font-medium">{t('wallet.referFriends')}</div>
                   <Badge variant="outline" className="bg-ff-yellow/20 text-ff-yellow">
                     +50 FC
                   </Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  For each friend who joins and donates
+                  {t('wallet.referFriendsDesc')}
                 </p>
                 <Button variant="outline" size="sm" className="mt-2 w-full">
-                  Invite Friends
+                  {t('wallet.inviteFriends')}
                 </Button>
               </div>
               
               <div className="p-4 border rounded-md hover:bg-muted transition-colors">
                 <div className="flex justify-between items-center">
-                  <div className="font-medium">Complete Achievements</div>
+                  <div className="font-medium">{t('wallet.completeAchiev')}</div>
                   <Badge variant="outline" className="bg-ff-orange/20 text-ff-orange">
                     +25-200 FC
                   </Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Unlock badges and earn rewards
+                  {t('wallet.completeAchievDesc')}
                 </p>
                 <Button variant="outline" size="sm" className="mt-2 w-full">
-                  View Achievements
+                  {t('wallet.viewAchiev')}
                 </Button>
               </div>
             </CardContent>
@@ -293,28 +295,27 @@ export default function WalletPage() {
 
           <Card className="mt-6 animate-fade-in" style={{animationDelay: "0.3s"}}>
             <CardHeader>
-              <CardTitle>FeedCoin Details</CardTitle>
-              <CardDescription>About your impact tokens</CardDescription>
+              <CardTitle>{t('wallet.detailsTitle')}</CardTitle>
+              <CardDescription>{t('wallet.detailsDesc')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">FeedCoin Rate</span>
+                <span className="text-muted-foreground">{t('wallet.rate')}</span>
                 <span>1 FC ≈ $0.10 USD</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Total Earned</span>
+                <span className="text-muted-foreground">{t('wallet.totalEarned')}</span>
                 <span>550 FC</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Total Spent</span>
+                <span className="text-muted-foreground">{t('wallet.totalSpent')}</span>
                 <span>200 FC</span>
               </div>
               <Separator />
               <div className="p-4 bg-muted rounded-md">
-                <h4 className="font-medium mb-2">About FeedCoins</h4>
+                <h4 className="font-medium mb-2">{t('wallet.aboutTitle')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  FeedCoins are rewards for your positive impact on food waste reduction. 
-                  They can be redeemed for products, services, or donated to causes.
+                  {t('wallet.aboutDesc')}
                 </p>
               </div>
             </CardContent>
