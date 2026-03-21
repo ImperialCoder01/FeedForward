@@ -107,13 +107,13 @@
   "marketplace": {
     "title": "Marketplace",
     "subtitle": "Buy and sell using FeedCoins or community products",
-    "sellerDash": "Seller Dashboard",
-    "addProduct": "Add Product",
-    "tabAll": "All Products",
-    "tabPerishable": "Perishable",
-    "tabNonPerishable": "Non-Perishable",
-    "noProductsTitle": "No products available",
-    "noProductsDesc": "Start by adding your first product to the marketplace"
+    "sellerDashboard": "Seller Dashboard",
+    "addNewProduct": "Add Product",
+    "allProducts": "All Products",
+    "perishable": "Perishable",
+    "nonPerishable": "Non-Perishable",
+    "emptyTitle": "No products available",
+    "emptyDescription": "Start by adding your first product to the marketplace"
   },
   "wallet": {
     "title": "FeedCoin Wallet",
