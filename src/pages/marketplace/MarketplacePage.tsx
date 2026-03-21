@@ -49,13 +49,13 @@ export default function MarketplacePage() {
               >
                 <Link to="/seller-dashboard">
                   <ShoppingBag className="h-4 w-4 mr-2" />
-                  {t('marketplace.sellerDash')}
+                  {t('marketplace.sellerDashboard')}
                 </Link>
               </Button>
               
               <Button onClick={() => setIsFormOpen(true)}>
                 <Plus className="h-4 w-4 mr-2" />
-                {t('marketplace.addProduct')}
+                {t('marketplace.addNewProduct')}
               </Button>
             </>
           )}
@@ -83,9 +83,9 @@ export default function MarketplacePage() {
 
       <Tabs defaultValue="all" className="mb-6">
         <TabsList>
-          <TabsTrigger value="all">{t('marketplace.tabAll')}</TabsTrigger>
-          <TabsTrigger value="perishable">{t('marketplace.tabPerishable')}</TabsTrigger>
-          <TabsTrigger value="non-perishable">{t('marketplace.tabNonPerishable')}</TabsTrigger>
+          <TabsTrigger value="all">{t('marketplace.allProducts')}</TabsTrigger>
+          <TabsTrigger value="perishable">{t('marketplace.perishable')}</TabsTrigger>
+          <TabsTrigger value="non-perishable">{t('marketplace.nonPerishable')}</TabsTrigger>
         </TabsList>
       </Tabs>
 
@@ -98,9 +98,9 @@ export default function MarketplacePage() {
       ) : products.length === 0 ? (
         <div className="text-center py-12">
           <ShoppingBag className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-medium">{t('marketplace.noProductsTitle')}</h3>
+          <h3 className="text-lg font-medium">{t('marketplace.emptyTitle')}</h3>
           <p className="text-muted-foreground">
-            {t('marketplace.noProductsDesc')}
+            {t('marketplace.emptyDescription')}
           </p>
           {isAuthenticated && (
             <Button 
@@ -109,7 +109,7 @@ export default function MarketplacePage() {
               onClick={() => setIsFormOpen(true)}
             >
               <Plus className="h-4 w-4 mr-2" />
-              {t('marketplace.addProduct')}
+              {t('marketplace.addNewProduct')}
             </Button>
           )}
         </div>
