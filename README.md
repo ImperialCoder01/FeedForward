@@ -1,270 +1,140 @@
-# Feed Forward (FF)
+<div align="center">
 
-A decentralized platform connecting surplus food sources with those in need, powered by blockchain technology and AI.
+# 🌍 Feed-Forward (FF)
+**Rescuing Food, Feeding Communities, Preserving Our Planet.**
 
-## Live Demo
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Feed%20Forward-success?style=for-the-badge&logo=vercel)](https://feedforward-one.vercel.app/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Web3](https://img.shields.io/badge/Web3-F6851B?style=for-the-badge&logo=metamask&logoColor=white)](https://rainbowkit.com/)
 
-Visit the live application at: [https://feedforward-one.vercel.app/](https://feedforward-one.vercel.app/)
+An intelligent, decentralized platform connecting surplus food sources with individuals and organizations in need, powered by AI prediction models and Web3 blockchain rewards.
 
-## Project Overview
+</div>
 
-Feed Forward is an intelligent, scalable system designed to:
-- Connect surplus food sources with individuals and organizations in need
-- Incentivize participation through rewards and reputation systems
-- Reduce food waste and combat hunger
-- Create transparent and traceable food donation networks
+---
 
-## Core Objectives
-- *Food Waste Reduction*: Utilize real-time alerts and AI to prevent edible food from being discarded
-- *Hunger Alleviation*: Match verified food donors with hungry individuals and NGOs
-- *Transparency & Trust*: Utilize blockchain for traceability and public trust
-- *Community Empowerment*: Reward and recognize active contributors with tokens and perks
+## 🚀 Live Demo
+Visit the fully verified and functional application at: **[feedforward-one.vercel.app](https://feedforward-one.vercel.app/)**
 
-## Features
+---
 
-- Real-time food donation tracking
-- AI-powered demand prediction
-- Blockchain-based reward system
-- Volunteer coordination
-- Impact analytics
-- Mobile-responsive design
+## 🌟 Project Overview
+Feed-Forward is a next-generation ecosystem built to eradicate food waste and combat hunger. By utilizing real-time geographic routing, artificial intelligence, and a gamified blockchain token economy, we match verified food donors (restaurants, events, farmers) with hungry individuals and NGOs seamlessly.
 
-## User Roles & Personas
+Every action makes an impact—and every impact is rewarded.
 
-### Donor
-*Description*: Individuals, corporates, farmers, or restaurants donating excess food
-*Primary Goals*: 
-- Reduce food waste
-- Make social impact
-- Earn rewards and recognition
+---
 
-### Recipient
-*Description*: NGOs, shelters, kitchens, or verified individuals receiving food
-*Primary Goals*:
-- Access surplus food resources
-- Feed individuals in need
-- Track impact and contributions
+## ⚡ Key Features (Fully Implemented)
 
-### Admin
-*Description*: Moderators, support staff, and validators managing platform integrity
-*Primary Goals*:
-- Ensure platform integrity
-- Validate users and donations
-- Manage disputes and violations
+### 🍱 The Core Food Rescue Engine
+- **Food Map & Discovery**: Interactive visual map utilizing mapping APIs to instantly locate available surplus food in real-time.
+- **Donate & Claim Flow**: Donors can list food (FoodFlags), and recipients or NGOs can claim and navigate to the pickup point.
 
-### Sponsors/CSR Partners
-*Description*: Corporates that fund rewards, logistics, or perks
-*Primary Goals*:
-- Fulfill CSR objectives
-- Gain brand visibility
-- Support social causes
+### 🧠 Cutting-Edge AI Integrations
+- **Annapoorna Chatbot**: A dedicated AI assistant to help users navigate the platform, understand food safety, and get answers.
+- **AI Inventory Parsing**: Upload food inventory lists and let AI automatically identify items nearing expiry to flag for donation.
+- **AI Order Verification**: Automated visual/textual verification of food deliveries for quality assurance.
 
-### FeedCoin Holders
-*Description*: Users who hold governance tokens and participate in DAO voting
-*Primary Goals*:
-- Influence platform decisions
-- Earn rewards from governance participation
-- Support platform growth
+### ⛓️ Web3 & Blockchain Economy
+- **Wallet Connection**: Seamlessly link your cryptocurrency wallet via RainbowKit & Wagmi.
+- **FeedCoin Rewards (FFC)**: Earn tokenized rewards for donating food, volunteering, or claiming food on time.
+- **Eco-Marketplace**: A decentralized storefront where users can spend their earned FeedCoins on eco-friendly products and sponsor perks.
 
-### Volunteers
-*Description*: Individuals who assist with food collection, delivery, and distribution
-*Primary Goals*:
-- Support food redistribution logistics
-- Make community impact
-- Earn rewards and recognition
+### 🌍 Impact & Societal Modules
+- **Sanjeevani (Disaster Relief)**: A dedicated disaster response module that reroutes surplus food to climate crisis zones and refugee camps.
+- **Farmer Distress Donations**: Special provisions allowing farmers to donate surplus crops during market crashes to minimize agrarian waste.
+- **Community Impact Dashboard**: Track CO₂ saved, meals donated, and water preserved in real-time.
 
-## Tech Stack
+### 🌐 Global Reach
+- **Multi-Language Support (i18n)**: Instantly toggle the entire interface between **English (EN)** and **Hindi (HI)** to bridge the gap between rural farmers and urban donators.
+- **Mobile Responsive**: Impeccable UI built with Tailwind CSS & Shadcn, optimized for every device format.
 
-- Frontend: Next.js, Tailwind CSS, shadcn-ui
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- AI/ML: Python (scikit-learn, pandas)
-- Blockchain: Ethereum/Polygon
-- Authentication: MetaMask, Web3.js
-- Deployment: Vercel
+---
 
-## Getting Started
+## 🏗️ Technical Architecture
+
+Feed-Forward utilizes a modern, modular architecture:
+
+- **Frontend Framework**: React 18 / Vite / TypeScript
+- **Styling**: Tailwind CSS + Shadcn UI components + Framer Motion
+- **Authentication & Database**: Supabase (PostgreSQL, Row Level Security, Trigger-based Profile Synchronization)
+- **Web3 Integration**: RainbowKit, Wagmi, viem, Ethers.js
+- **Routing**: React Router DOM v6
+- **Internationalization**: `i18next` & `react-i18next`
+- **Deployment**: Vercel (SPA routing configured)
+
+### 📁 Clean Feature-Based Folder Structure
+The codebase follows a strictly organized domain-driven architecture:
+- `/src/pages/auth/` - Sign In, Sign Up, Profile, Wallet configuration
+- `/src/pages/core/` - Homepage, Landing content, 404
+- `/src/pages/food/` - Maps, Donation forms, AI Inventory
+- `/src/pages/marketplace/` - Eco-Marketplace, Checkout, Seller Dashboards
+- `/src/pages/impact/` - Sanjeevani, Volunteer flows, CSR connections
+- `/src/pages/support/` - AI Chatbots and Help Centers
+
+---
+
+## 🛠️ Getting Started Locally
 
 ### Prerequisites
+- Node.js (v18+)
+- Web3 Wallet (e.g., MetaMask to test blockchain connections)
+- A Supabase Project (for Auth & DB)
 
-- Node.js (v16 or higher)
-- npm or yarn
-- MetaMask wallet (for blockchain features)
+### Installation Guide
 
-### Installation
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ImperialCoder01/FeedForward.git
+   cd FeedForward
+   ```
 
-```sh
-# Clone the repository
-git clone https://github.com/yourusername/feed-forward.git
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Navigate to project directory
-cd feed-forward
+3. **Environment Setup**
+   Create a `.env` file in the root and add your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-# Install dependencies
-npm install
+4. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+   The application will be running at `http://localhost:8080`!
 
-# Start development server
-npm run dev
-```
+---
 
-## Implementation Phases
+## 📖 Database Schema (Supabase)
 
-### Phase 1: Core Platform (Months 1-3)
-- Basic user roles and authentication
-- FoodFlag creation and claiming
-- Simple map interface
-- Initial verification system
-- Mobile responsive design
+To run the application properly, the Supabase backend relies on multiple automated triggers to keep user accounts synced with `profiles`. The included SQL file (`fix_signup_complete.sql`) contains the exact definitions for our robust `SECURITY DEFINER` triggers that bypass RLS to ensure smooth onboarding.
 
-### Phase 2: Smart Features (Months 4-6)
-- AI inventory integration
-- Notification system
-- Enhanced mapping
-- Basic rewards system
-- Feedback mechanisms
+---
 
-### Phase 3: Blockchain & Tokens (Months 7-9)
-- FeedCoin implementation
-- Smart contract deployment
-- Wallet integration
-- NFT badges
-- Initial marketplace
+## 🌱 Sustainable Development Goals (SDGs)
+Project Feed-Forward directly aligns with UN SDGs:
+- **SDG 2:** Zero Hunger
+- **SDG 11:** Sustainable Cities and Communities
+- **SDG 12:** Responsible Consumption and Production
+- **SDG 13:** Climate Action
 
-### Phase 4: Advanced Features (Months 10-12)
-- DAO governance system
-- Disaster response capabilities
-- Advanced analytics
-- Farmer distress donations
-- Full gamification features
-- API for third-party developers
-- Volunteer system implementation
+---
 
-## Future Enhancements
+## 🤝 Contributing
+Contributions are absolutely welcome! We are always looking for open-source contributors to help us expand our AI models, fix bugs, or add new local languages to the i18n roster. 
 
-### Global NGO Partnerships
-- Integration with international aid organizations
-- Cross-border donation capabilities
-- Multi-currency support
+Please read our contributing guidelines before submitting a Pull Request.
 
-### Cold Chain Logistics Support
-- Cold storage tracking
-- Temperature monitoring
-- Specialized transport coordination
+---
 
-### Video Verification of Donations
-- Live streaming during pickup/delivery
-- Video proof of quality and quantity
-- AI analysis of video content
-
-### Multi-language Support
-- UI translation
-- Regional language interfaces
-- Localized content and resources
-
-### Mobile Applications
-- Native iOS and Android apps
-- Offline functionality
-- Push notification optimization
-- Mobile-specific features
-
-## Success Metrics
-
-### Platform Adoption
-- Active users (donors and recipients)
-- Geographic coverage
-- Organization participation
-
-### Food Impact
-- Total meals distributed
-- Food waste prevented (kg)
-- Nutritional value tracking
-
-### Environmental Impact
-- CO₂ emissions prevented
-- Water saved
-- Land use efficiency
-
-### Community Growth
-- FeedCoin holders
-- DAO participation rate
-- Community-led initiatives
-- Volunteer participation rates
-
-### Financial Sustainability
-- Revenue growth
-- Operating costs
-- Return on investment
-- Platform self-sufficiency timeline
-
-## Risk Assessment & Mitigation
-
-### Food Quality & Safety
-*Risk*: Food safety concerns or contamination
-*Mitigation*: 
-- Clear guidelines for acceptable donations
-- Quality rating system
-- Liability disclaimers and insurance
-- Verification process for food handling
-
-### Platform Adoption
-*Risk*: Low initial adoption from key stakeholders
-*Mitigation*:
-- Targeted onboarding of major food sources
-- Strategic partnerships with established NGOs
-- Incentive structure for early adopters
-- Educational campaigns
-
-### Technical Risks
-*Risk*: Blockchain scalability and gas fees
-*Mitigation*:
-- Layer 2 solutions
-- Batch processing of transactions
-- Gas fee subsidies for critical functions
-- Hybrid on-chain/off-chain approach
-
-### Regulatory Compliance
-*Risk*: Varying food donation regulations across regions
-*Mitigation*:
-- Legal advisory board
-- Region-specific rule configurations
-- Compliance documentation
-- Regular regulatory reviews
-
-## Sustainable Development Goals (SDGs) Alignment
-
-### SDG 2: Zero Hunger
-- Direct food redistribution to those in need
-- Nutritional value tracking of donated food
-- Support for vulnerable communities
-
-### SDG 11: Sustainable Cities
-- Urban food waste management
-- Local food redistribution networks
-- Community engagement in sustainability
-
-### SDG 12: Responsible Consumption and Production
-- Food waste reduction across supply chain
-- Transparent tracking of resource usage
-- Promoting sustainable consumption patterns
-
-### SDG 13: Climate Action
-- Greenhouse gas reduction through less food waste
-- Carbon footprint tracking and offsets
-- Environmental impact education
-
-### SDG 17: Partnerships for the Goals
-- Multi-stakeholder platform connecting donors, recipients, and volunteers
-- Corporate-NGO collaboration framework
-- Cross-sector partnerships for sustainable development
-
-## Contributing
-
-We welcome contributions! Please read our contributing guidelines before submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For any queries or support, please reach out to us at [contact@feedforward.org](mailto:contact@feedforward.org)
+<div align="center">
+  Built with ❤️ to feed the world.
+</div>
