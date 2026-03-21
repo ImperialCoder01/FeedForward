@@ -104,6 +104,17 @@
     "title": "Annapoorna Chatbot",
     "subtitle": "Our AI assistant can help answer questions about food donation, volunteering, and more."
   },
+  "marketplace": {
+    "title": "Marketplace",
+    "subtitle": "Buy and sell using FeedCoins or community products",
+    "sellerDash": "Seller Dashboard",
+    "addProduct": "Add Product",
+    "tabAll": "All Products",
+    "tabPerishable": "Perishable",
+    "tabNonPerishable": "Non-Perishable",
+    "noProductsTitle": "No products available",
+    "noProductsDesc": "Start by adding your first product to the marketplace"
+  },
   "wallet": {
     "title": "FeedCoin Wallet",
     "subtitle": "Manage your impact rewards",
