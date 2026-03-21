@@ -1,0 +1,85 @@
+From 6ca74b0eb683d24b3872e2b80154e332e9bfc13a Mon Sep 17 00:00:00 2001
+From: ImperialCoder01 <vishalkumartripathi08@gmail.com>
+Date: Sat, 21 Mar 2026 19:35:44 +0530
+Subject: [PATCH] fix: wallet page crash - remove undefined useToast, use
+ sonner toast API; improve signup error logging
+
+---
+ src/contexts/AuthContext.tsx | 20 ++++++++++++++++++--
+ src/pages/WalletPage.tsx     | 10 +++-------
+ 2 files changed, 21 insertions(+), 9 deletions(-)
+
+diff --git a/src/contexts/AuthContext.tsx b/src/contexts/AuthContext.tsx
+index 808091b..ce02e2d 100644
+--- a/src/contexts/AuthContext.tsx
++++ b/src/contexts/AuthContext.tsx
+@@ -126,9 +126,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
+         }
+       });
+ 
+-      if (error) return { error };
++      if (error) {
++        console.error('[Signup Error]', {
++          message: error.message,
++          status: error.status,
++          name: error.name,
++        });
++        // Provide a more helpful message for database errors
++        if (error.message?.includes('Database error')) {
++          const enhancedError = {
++            ...error,
++            message: 'Database error saving new user. Please contact support or try again later.',
++          };
++          return { error: enhancedError as AuthError };
++        }
++        return { error };
++      }
+       return { error: null };
+-    } catch (error) {
++    } catch (error: any) {
++      console.error('[Signup Unexpected Error]', error);
+       return { error };
+     }
+   };
+diff --git a/src/pages/WalletPage.tsx b/src/pages/WalletPage.tsx
+index 2e1089a..2948332 100644
+--- a/src/pages/WalletPage.tsx
++++ b/src/pages/WalletPage.tsx
+@@ -30,7 +30,6 @@ interface Transaction {
+ 
+ export default function WalletPage() {
+   const navigate = useNavigate();
+-  const { toast } = useToast();
+   const { isAuthenticated, user } = useAuth();
+   const [activeTab, setActiveTab] = useState<string>("balance");
+   const [isLoading, setIsLoading] = useState(true);
+@@ -41,14 +40,12 @@ export default function WalletPage() {
+   // Redirect if not authenticated
+   useEffect(() => {
+     if (!isAuthenticated) {
+-      toast({
+-        title: "Authentication required",
++      toast.error("Authentication required", {
+         description: "Please login to view your wallet",
+-        variant: "destructive",
+       });
+       navigate("/login");
+     }
+-  }, [isAuthenticated, navigate, toast]);
++  }, [isAuthenticated, navigate]);
+ 
+   // Fetch wallet data
+   useEffect(() => {
+@@ -86,8 +83,7 @@ export default function WalletPage() {
+     // Mock refresh
+     setTimeout(() => {
+       setIsRefreshing(false);
+-      toast({
+-        title: "Wallet refreshed",
++      toast.success("Wallet refreshed", {
+         description: "Your wallet information is up to date",
+       });
+     }, 1000);
+-- 
+2.53.0.windows.2
+

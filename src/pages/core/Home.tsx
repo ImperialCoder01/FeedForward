@@ -14,6 +14,7 @@ import { MapPin, Users, Award, ArrowRight, TrendingUp, Heart, ShieldCheck, Bell,
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card, CardContent } from "@/components/ui/card";
 import FrameworkSection from "@/components/FrameworkSection";
+import { useTranslation } from "react-i18next";
 
 const formatNumber = (num: number): string => {
   if (num >= 1000000) {
@@ -26,6 +27,7 @@ const formatNumber = (num: number): string => {
 };
 
 export default function Home() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("nearby");
   
   const nearbyFlags = mockFoodFlags.slice(0, 3);
@@ -78,18 +80,17 @@ export default function Home() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-              Rescuing Food,<br />
-              <span className="gradient-text">Feeding Communities</span>
+              {t('home.heroTitle', 'Rescuing Food, Feeding Communities')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg animate-fade-in" style={{animationDelay: "0.2s"}}>
-              Connect surplus food with those in need while earning rewards for your positive impact on the community and environment.
+              {t('home.heroSubtitle', 'Connect surplus food with those in need while earning rewards for your positive impact on the community and environment.')}
             </p>
             <div className="flex flex-wrap gap-4 pt-4 animate-fade-in" style={{animationDelay: "0.4s"}}>
               <Button asChild className="btn-gradient" size="lg">
-                <Link to="/donate">Donate Food</Link>
+                <Link to="/donate">{t('home.ctaDonate', 'Donate Food')}</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/map">Find Food</Link>
+                <Link to="/map">{t('home.ctaExplore', 'Find Food')}</Link>
               </Button>
               <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white" size="lg">
                 <Link to="/plans" className="flex items-center gap-2">

@@ -7,9 +7,12 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { UserMenu } from "./nav/UserMenu";
 import { NotificationButton } from "./nav/NotificationButton";
 import { DisasterAlertButton } from "./DisasterAlertButton";
+import { LanguageSwitcher } from "./nav/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export function Navbar() {
   const { isAuthenticated } = useAuth();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
@@ -24,6 +27,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <DisasterAlertButton />
           <ConnectWallet />
+          <LanguageSwitcher />
           <ThemeSwitcher />
           <NotificationButton />
           
@@ -31,7 +35,7 @@ export function Navbar() {
             <UserMenu />
           ) : (
             <Button asChild className="hidden md:inline-flex btn-gradient animate-fade-in">
-              <Link to="/login">Sign In</Link>
+              <Link to="/login">{t('nav.login', 'Sign In')}</Link>
             </Button>
           )}
         </div>

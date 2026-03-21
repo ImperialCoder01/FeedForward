@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "foodMap": "Food Map",
+    "donateFood": "Donate Food",
+    "aiInventory": "AI Inventory",
+    "volunteer": "Volunteer",
+    "explore": "Explore",
+    "communityImpact": "Community Impact",
+    "chatbot": "Annapoorna Chatbot",
+    "aiOrderVerification": "AI Order Verification",
+    "sanjeevani": "Sanjeevani",
+    "ecoMarketplace": "Eco-Marketplace",
+    "csrDashboard": "CSR Dashboard",
+    "login": "Login",
+    "signup": "Sign Up",
+    "myProfile": "My Profile",
+    "myWallet": "My Wallet",
+    "sellerDashboard": "Seller Dashboard",
+    "adminPlans": "Admin Plans",
+    "analytics": "Analytics",
+    "logout": "Logout",
+    "connectWallet": "Connect Wallet",
+    "language": "Language"
+  },
+  "home": {
+    "heroTitle": "Connecting Surplus Food to Those in Need",
+    "heroSubtitle": "Join our network of food donors, volunteers, and NGOs to eliminate food waste and ensure no one goes hungry.",
+    "ctaExplore": "Explore Food Map",
+    "ctaDonate": "Donate Food Now"
+  }
+}
