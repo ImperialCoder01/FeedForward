@@ -78,6 +78,33 @@ The codebase follows a strictly organized domain-driven architecture:
 
 ---
 
+## 📖 Documentation Index
+
+For detailed guides, specifications, and walkthroughs, check out the [docs](./docs) directory:
+
+### ⚙️ Setup & Deployment Guides
+*   **[Setup Guide](./docs/SETUP_GUIDE.md)**: Steps to get the project configured locally.
+*   **[Quick Start](./docs/QUICK_START.md)**: Fast path to running the development environment.
+*   **[Running the App](./docs/RUNNING_APP.md)**: Command guide and environment prerequisites.
+*   **[Supabase Setup Guide](./docs/SUPABASE_SETUP.md)**: Database structure, RLS policies, and triggers.
+*   **[Deployment Guide](./docs/DEPLOYMENT_GUIDE.md)**: Overview of general deployment pipelines.
+*   **[Deploying to Vercel](./docs/DEPLOY_TO_VERCEL.md)**: Direct deployment instructions for Vercel.
+
+### 🧪 Testing & Verification
+*   **[Auth Test Guide](./docs/AUTH_TEST_GUIDE.md)**: Validating sign-up, sign-in, and session behaviors.
+*   **[Test Checklist](./docs/TEST_CHECKLIST.md)**: Step-by-step checklist to verify all features.
+
+### 💼 Revenue & Monetization Model
+*   **[Revenue Model Guide](./docs/REVENUE_MODEL_GUIDE.md)**: Explanation of platform fee models.
+*   **[Revenue Upgrade Plan](./docs/REVENUE_UPGRADE_PLAN.md)**: Roadmap for upgrading subscription plans.
+*   **[Revenue Quickstart](./docs/REVENUE_QUICKSTART.md)**: Developer quickstart for revenue-related services.
+
+### 📋 Product Specifications
+*   **[Product Requirements Document (PRD)](./docs/PRD.md)**: Detailed feature list and business goals.
+*   **[Implementation Summary](./docs/IMPLEMENTATION_SUMMARY_backup.md)**: Architectural and code status breakdown.
+
+---
+
 ## 🛠️ Getting Started Locally
 
 ### Prerequisites
@@ -115,7 +142,7 @@ The codebase follows a strictly organized domain-driven architecture:
 
 ## 📖 Database Schema (Supabase)
 
-To run the application properly, the Supabase backend relies on multiple automated triggers to keep user accounts synced with `profiles`. The included SQL file (`fix_signup_complete.sql`) contains the exact definitions for our robust `SECURITY DEFINER` triggers that bypass RLS to ensure smooth onboarding.
+To run the application properly, the Supabase backend relies on multiple automated triggers to keep user accounts synced with `profiles`. The included SQL file (`supabase/fix_signup_complete.sql`) contains the exact definitions for our robust `SECURITY DEFINER` triggers that bypass RLS to ensure smooth onboarding.
 
 ---
 
