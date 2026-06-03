@@ -57,7 +57,7 @@ npm run dev
 
 **Check:**
 1. Is Email provider enabled in Supabase?
-   - Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/auth/providers
+   - Go to: https://your_supabase_project_id.supabase.co/project/default/auth/providers
    - Make sure Email is enabled
 
 2. Is email already registered?
@@ -80,7 +80,7 @@ npm run dev
 ### Issue: "No users in database"
 
 **Check:**
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/auth/users
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/auth/users
 2. See if user appears there
 3. If not, signup failed silently
 
@@ -129,12 +129,12 @@ Open browser console and type:
 ```javascript
 console.log(import.meta.env.VITE_SUPABASE_URL);
 ```
-Should output: `https://czzxoyxdyhrupgdmazpu.supabase.co`
+Should output: `https://your_supabase_project_id.supabase.co`
 
 ### Step 2: Test Auth Directly
 In browser console:
 ```javascript
-const { data, error } = await fetch('https://czzxoyxdyhrupgdmazpu.supabase.co/auth/v1/health');
+const { data, error } = await fetch('https://your_supabase_project_id.supabase.co/auth/v1/health');
 console.log(data);
 ```
 Should return: `{ "status": "healthy" }`
@@ -143,7 +143,7 @@ Should return: `{ "status": "healthy" }`
 1. Open DevTools → Network tab
 2. Try to signup/login
 3. Look for requests to:
-   - `https://czzxoyxdyhrupgdmazpu.supabase.co/auth/v1/token?grant_type=password`
+   - `https://your_supabase_project_id.supabase.co/auth/v1/token?grant_type=password`
    - Status should be 200 for success
 
 ---

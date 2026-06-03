@@ -2,9 +2,9 @@
 
 ## Your Supabase Project Details
 
-**Project URL:** https://czzxoyxdyhrupgdmazpu.supabase.co
+**Project URL:** https://your_supabase_project_id.supabase.co
 
-**Project ID:** czzxoyxdyhrupgdmazpu
+**Project ID:** your_supabase_project_id
 
 ---
 
@@ -12,13 +12,13 @@
 
 ### Public API (Frontend)
 ```
-URL: https://czzxoyxdyhrupgdmazpu.supabase.co
-ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6enhveXhkeWhydXBnZG1henB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5OTA0NDMsImV4cCI6MjA4OTU2NjQ0M30.Rqusfm10PNX3ldiQLcWgsGK68MLHQp08O5vhg4Q2UyE
+URL: https://your_supabase_project_id.supabase.co
+ANON_KEY: your_supabase_anon_key
 ```
 
 ### Database Connection
 ```
-Host: db.czzxoyxdyhrupgdmazpu.supabase.co
+Host: db.your_supabase_project_id.supabase.co
 Port: 5432
 Database: postgres
 User: postgres
@@ -29,7 +29,7 @@ Password: [Your database password]
 
 ## How to Find Your API Keys
 
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/settings/api
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/settings/api
 
 2. Look for these sections:
    - **Project API keys** (for public/anon key)
@@ -42,8 +42,8 @@ Password: [Your database password]
 Your `.env` file should have:
 
 ```env
-VITE_SUPABASE_URL=https://czzxoyxdyhrupgdmazpu.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6enhveXhkeWhydXBnZG1henB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5OTA0NDMsImV4cCI6MjA4OTU2NjQ0M30.Rqusfm10PNX3ldiQLcWgsGK68MLHQp08O5vhg4Q2UyE
+VITE_SUPABASE_URL=https://your_supabase_project_id.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 ---
@@ -165,7 +165,7 @@ All tables have RLS enabled for security:
 
 ### "Connection failed"
 - Check if `.env` file exists
-- Verify Supabase URL is correct: `https://czzxoyxdyhrupgdmazpu.supabase.co`
+- Verify Supabase URL is correct: `https://your_supabase_project_id.supabase.co`
 - Make sure ANON_KEY is set
 
 ### "Permission denied"
@@ -202,7 +202,7 @@ supabase login
 ### Link to Project
 ```bash
 cd supabase
-supabase link --project-ref czzxoyxdyhrupgdmazpu
+supabase link --project-ref your_supabase_project_id
 ```
 
 ### Pull Schema
@@ -214,13 +214,13 @@ supabase db pull
 
 ## Dashboard Access
 
-**Supabase Dashboard:** https://czzxoyxdyhrupgdmazpu.supabase.co
+**Supabase Dashboard:** https://your_supabase_project_id.supabase.co
 
 ### Quick Links
-- **Table Editor:** https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/editor
-- **Authentication:** https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/auth/users
-- **Storage:** https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/storage
-- **SQL Editor:** https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/sql
+- **Table Editor:** https://your_supabase_project_id.supabase.co/project/default/editor
+- **Authentication:** https://your_supabase_project_id.supabase.co/project/default/auth/users
+- **Storage:** https://your_supabase_project_id.supabase.co/project/default/storage
+- **SQL Editor:** https://your_supabase_project_id.supabase.co/project/default/sql
 
 ---
 

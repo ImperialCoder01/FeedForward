@@ -130,7 +130,7 @@ git push
 
 | Name | Value |
 |------|-------|
-| `VITE_SUPABASE_URL` | `https://czzxoyxdyhrupgdmazpu.supabase.co` |
+| `VITE_SUPABASE_URL` | `https://your_supabase_project_id.supabase.co` |
 | `VITE_SUPABASE_ANON_KEY` | (your anon key) |
 
 5. Click "Deploy"
@@ -194,7 +194,7 @@ npm run dev
 ## Quick Links
 
 - **Local App**: http://localhost:5173
-- **Supabase Dashboard**: https://czzxoyxdyhrupgdmazpu.supabase.co
+- **Supabase Dashboard**: https://your_supabase_project_id.supabase.co
 - **MetaMask**: https://metamask.io/download/
 - **Polygon Faucet**: https://faucet.polygon.technology/
 - **Vercel**: https://vercel.com

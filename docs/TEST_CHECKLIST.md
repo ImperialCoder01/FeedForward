@@ -145,7 +145,7 @@ Before testing, verify:
 
 Check your Supabase database:
 
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/editor
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/editor
 
 2. Check `profiles` table:
    - Should have user record

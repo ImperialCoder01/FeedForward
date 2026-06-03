@@ -10,7 +10,7 @@
 
 **⚠️ IMPORTANT: Do this first!**
 
-1. Open: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/sql
+1. Open: https://your_supabase_project_id.supabase.co/project/default/sql
 
 2. Copy everything from:
    ```

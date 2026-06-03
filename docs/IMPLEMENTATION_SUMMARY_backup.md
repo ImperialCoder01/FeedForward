@@ -202,7 +202,7 @@ The app will run at: http://localhost:5173
 
 Your `.env` file includes:
 ```env
-VITE_SUPABASE_URL=https://czzxoyxdyhrupgdmazpu.supabase.co
+VITE_SUPABASE_URL=https://your_supabase_project_id.supabase.co
 VITE_SUPABASE_ANON_KEY=<your-anon-key>
 VITE_BLOCKCHAIN_RPC_URL=https://rpc-amoy.polygon.technology
 VITE_CHAIN_ID=80002

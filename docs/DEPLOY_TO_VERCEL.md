@@ -14,7 +14,7 @@ In your Vercel dashboard:
 
 | Name | Value | Notes |
 |------|-------|-------|
-| `supabase_url` | `https://czzxoyxdyhrupgdmazpu.supabase.co` | From Supabase dashboard |
+| `supabase_url` | `https://your_supabase_project_id.supabase.co` | From Supabase dashboard |
 | `supabase_anon_key` | Your Supabase anon key | From Supabase dashboard |
 | `razorpay_key_id` | Your Razorpay Key ID | From Razorpay dashboard |
 | `razorpay_key_secret` | Your Razorpay Key Secret | From Razorpay dashboard (mark as secret) |

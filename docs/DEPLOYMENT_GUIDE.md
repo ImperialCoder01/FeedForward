@@ -90,7 +90,7 @@ Click **Environment Variables** and add:
 
 | Name | Value |
 |------|-------|
-| `VITE_SUPABASE_URL` | `https://czzxoyxdyhrupgdmazpu.supabase.co` |
+| `VITE_SUPABASE_URL` | `https://your_supabase_project_id.supabase.co` |
 | `VITE_SUPABASE_ANON_KEY` | (Your anon key from Supabase) |
 | `VITE_RAZORPAY_KEY_ID` | (Your Razorpay key - optional) |
 | `VITE_APP_NAME` | `Feed Forward` |

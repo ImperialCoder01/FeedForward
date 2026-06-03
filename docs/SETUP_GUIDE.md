@@ -24,7 +24,7 @@ cp .env.example .env
 
 Update `.env` with your Supabase credentials:
 ```env
-VITE_SUPABASE_URL=https://czzxoyxdyhrupgdmazpu.supabase.co
+VITE_SUPABASE_URL=https://your_supabase_project_id.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_key_here
 ```
 
@@ -47,11 +47,11 @@ Visit: http://localhost:5173
 - ✅ `feedcoin_transactions` - Reward transactions
 
 ### Enable Email Auth
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/auth/providers
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/auth/providers
 2. Enable Email/Password authentication
 
 ### Create Storage Bucket
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/storage
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/storage
 2. Create bucket: `food-images`
 3. Set to Public
 4. Add policy:
@@ -106,7 +106,7 @@ git push -u origin main
 
 | Name | Value |
 |------|-------|
-| `VITE_SUPABASE_URL` | `https://czzxoyxdyhrupgdmazpu.supabase.co` |
+| `VITE_SUPABASE_URL` | `https://your_supabase_project_id.supabase.co` |
 | `VITE_SUPABASE_ANON_KEY` | Your anon key |
 | `VITE_BLOCKCHAIN_RPC_URL` | `https://rpc-amoy.polygon.technology` |
 | `VITE_CHAIN_ID` | `80002` |

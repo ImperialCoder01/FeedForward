@@ -9,9 +9,9 @@ export async function testSupabaseConnection(): Promise<boolean> {
   try {
     console.log('Testing Supabase connection...');
     
-    const response = await fetch('https://czzxoyxdyhrupgdmazpu.supabase.co/rest/v1/', {
+    const response = await fetch('https://your_supabase_project_id.supabase.co/rest/v1/', {
       headers: {
-        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6enhveXhkeWhydXBnZG1henB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5OTA0NDMsImV4cCI6MjA4OTU2NjQ0M30.Rqusfm10PNX3ldiQLcWgsGK68MLHQp08O5vhg4Q2UyE',
+        'apikey': 'your_supabase_anon_key',
         'Content-Type': 'application/json'
       }
     });
@@ -34,11 +34,11 @@ export async function testSignup(email: string, password: string, name: string):
   try {
     console.log('Testing signup...', { email, name });
     
-    const response = await fetch('https://czzxoyxdyhrupgdmazpu.supabase.co/auth/v1/signup', {
+    const response = await fetch('https://your_supabase_project_id.supabase.co/auth/v1/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6enhveXhkeWhydXBnZG1henB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5OTA0NDMsImV4cCI6MjA4OTU2NjQ0M30.Rqusfm10PNX3ldiQLcWgsGK68MLHQp08O5vhg4Q2UyE',
+        'apikey': 'your_supabase_anon_key',
       },
       body: JSON.stringify({
         email,
@@ -70,11 +70,11 @@ export async function testLogin(email: string, password: string): Promise<{ succ
   try {
     console.log('Testing login...', { email });
     
-    const response = await fetch('https://czzxoyxdyhrupgdmazpu.supabase.co/auth/v1/token?grant_type=password', {
+    const response = await fetch('https://your_supabase_project_id.supabase.co/auth/v1/token?grant_type=password', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6enhveXhkeWhydXBnZG1henB1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5OTA0NDMsImV4cCI6MjA4OTU2NjQ0M30.Rqusfm10PNX3ldiQLcWgsGK68MLHQp08O5vhg4Q2UyE',
+        'apikey': 'your_supabase_anon_key',
       },
       body: JSON.stringify({
         email,

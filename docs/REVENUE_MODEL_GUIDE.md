@@ -32,7 +32,7 @@
 ### Step 1: Run SQL Migration (REQUIRED)
 
 Go to your Supabase Dashboard:
-1. Open SQL Editor: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/sql
+1. Open SQL Editor: https://your_supabase_project_id.supabase.co/project/default/sql
 
 2. Copy and paste the entire contents of:
    ```
@@ -63,7 +63,7 @@ Go to your Supabase Dashboard:
 
 After running SQL, check your database:
 
-1. Go to: https://czzxoyxdyhrupgdmazpu.supabase.co/project/default/editor
+1. Go to: https://your_supabase_project_id.supabase.co/project/default/editor
 
 2. Verify these tables exist:
    - ✅ `subscription_plans` (should have 3 plans)

@@ -1,7 +1,7 @@
 # Supabase Configuration for Feed Forward
 # https://supabase.com/docs
 
-project_id = "czzxoyxdyhrupgdmazpu"
+project_id = "your_supabase_project_id"
 
 [api]
 enabled = true
