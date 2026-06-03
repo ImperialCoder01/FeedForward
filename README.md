@@ -100,7 +100,7 @@ For detailed guides, specifications, and walkthroughs, check out the [docs](./do
 *   **[Revenue Quickstart](./docs/REVENUE_QUICKSTART.md)**: Developer quickstart for revenue-related services.
 
 ### 📋 Product Specifications
-*   **[Product Requirements Document (PRD)](./docs/PRD.md)**: Detailed feature list and business goals.
+*   **[Product Requirements Document (PRD)](./PRD.md)**: Detailed feature list and business goals.
 *   **[Implementation Summary](./docs/IMPLEMENTATION_SUMMARY_backup.md)**: Architectural and code status breakdown.
 
 ---
